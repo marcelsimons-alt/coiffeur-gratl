@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coiffeur Marianne Gratl – Willkommen</title>
-  <meta name="description" content="Wir freuen uns darauf Sie zu begeistern!">
+  <title>Balayage – Coiffeur Marianne Gratl</title>
+  <meta name="description" content="Natürlich fließende Farbverläufe für einen sonnengeküssten Look. Unsere Spezialität.">
   <meta name="theme-color" content="#060606">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -584,490 +584,58 @@ img { max-width: 100%; height: auto; display: block; }
 .page-hero h1 { color: var(--text-primary); margin-bottom: 0.5rem; }
 .page-hero p { color: var(--text-secondary); font-size: 1rem; max-width: 600px; }
 
-/* HERO V6 */
-.hero {
-  position: relative;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-  background: var(--bg-primary);
-}
-.hero-bg-image {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-  opacity: 0.25;
-  z-index: 0;
-  transform: scale(1.1);
-  transition: transform 15s ease;
-}
-.hero-bg-image.loaded { transform: scale(1); }
-.hero-gradient-left {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(90deg, rgba(6,6,6,0.95) 0%, rgba(6,6,6,0.7) 40%, rgba(6,6,6,0.3) 70%, rgba(6,6,6,0.6) 100%);
-  z-index: 1;
-}
-.hero-gradient-bottom {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 200px;
-  background: linear-gradient(180deg, transparent, var(--bg-primary));
-  z-index: 1;
-}
-.hero-decoration {
-  position: absolute;
-  top: 50%;
-  right: 8%;
-  transform: translateY(-50%);
-  width: 500px;
-  height: 500px;
-  border: 1px solid rgba(var(--accent-rgb), 0.06);
-  border-radius: 50%;
-  z-index: 1;
-  pointer-events: none;
-}
-.hero-decoration::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 350px;
-  height: 350px;
-  border: 1px solid rgba(var(--accent-rgb), 0.04);
-  border-radius: 50%;
-}
-.hero-inner {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  padding: 140px 0 100px;
-}
-.hero-content {
-  max-width: 720px;
-}
-.hero-eyebrow {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.7rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.3em;
-  color: var(--accent);
-  margin-bottom: 2rem;
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: heroFadeIn 0.8s ease forwards 1s;
-}
-.hero-eyebrow::before {
-  content: '';
-  width: 48px;
-  height: 1px;
-  background: var(--accent);
-}
-.hero-title {
-  margin-bottom: 2rem;
-  opacity: 0;
-  transform: translateY(30px);
-  animation: heroFadeIn 1s ease forwards 1.2s;
-}
-.hero-title em {
-  font-style: italic;
-  color: var(--accent);
-}
-.hero-subtitle {
-  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
-  color: var(--text-secondary);
-  margin-bottom: 3rem;
-  max-width: 520px;
-  line-height: 1.9;
-  font-weight: 350;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: heroFadeIn 0.8s ease forwards 1.5s;
-}
-.hero-ctas {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-  align-items: center;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: heroFadeIn 0.8s ease forwards 1.7s;
-}
-@keyframes heroFadeIn { to { opacity: 1; transform: translateY(0); } }
+.sd-hero { position: relative; height: 55vh; min-height: 400px; display: flex; align-items: flex-end; padding-bottom: clamp(3rem, 6vw, 5rem); overflow: hidden; }
+.sd-hero-bg { position: absolute; inset: 0; background-size: cover; background-position: center; z-index: 0; opacity: 0.3; }
+.sd-hero-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, var(--bg-primary) 0%, transparent 30%, rgba(6,6,6,0.95) 100%); z-index: 1; }
+.sd-hero .container { position: relative; z-index: 2; }
+.sd-content { padding: clamp(5rem, 10vw, 8rem) 0; background: var(--bg-primary); }
+.sd-main { display: grid; grid-template-columns: 1.8fr 1fr; gap: 4rem; align-items: start; }
+.sd-text { font-size: 1rem; line-height: 1.9; color: var(--text-secondary); }
+.sd-text p { margin-bottom: 1.5rem; }
+.sd-sidebar { position: sticky; top: 110px; }
+.sd-sidebar-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 36px; }
+.sd-sidebar-card h4 { font-family: 'Inter', sans-serif; font-weight: 500; margin-bottom: 16px; }
 
-.hero-stats {
-  display: flex;
-  gap: 48px;
-  margin-top: 5rem;
-  opacity: 0;
-  animation: heroFadeIn 0.8s ease forwards 2s;
-}
-.hero-stat { text-align: left; }
-.hero-stat-number {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 400;
-  letter-spacing: -0.04em;
-  color: var(--text-primary);
-  line-height: 1;
-  margin-bottom: 6px;
-}
-.hero-stat-label {
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  color: var(--text-muted);
-}
 
-@media(max-width:768px) {
-  .hero-content { max-width: 100%; }
-  .hero-decoration { display: none; }
-  .hero-stats { gap: 32px; flex-wrap: wrap; }
-  .hero-inner { padding: 120px 0 80px; }
-}
+.sd-benefits { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; margin-top: 3rem; }
+.sd-benefit { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 28px; transition: border-color 0.4s, transform 0.4s; }
+.sd-benefit:hover { border-color: rgba(var(--accent-rgb),0.15); transform: translateY(-3px); }
+.sd-benefit-icon { width: 40px; height: 40px; border-radius: 10px; background: rgba(var(--accent-rgb),0.08); display: flex; align-items: center; justify-content: center; margin-bottom: 14px; color: var(--accent); font-size: 1rem; }
+.sd-benefit h4 { font-family: 'Inter', sans-serif; font-weight: 500; margin-bottom: 6px; font-size: 0.9rem; }
+.sd-benefit p { color: var(--text-secondary); font-size: 0.8rem; line-height: 1.7; }
 
-/* MARQUEE SECTION */
-.hero-marquee {
-  position: relative;
-  z-index: 2;
-}
+.sd-process { padding: clamp(5rem, 10vw, 8rem) 0; background: var(--bg-secondary); }
+.sd-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; margin-top: 3rem; }
+.sd-step { text-align: center; position: relative; }
+.sd-step::after { content: ''; position: absolute; top: 26px; right: -16px; width: 32px; height: 1px; background: var(--border); }
+.sd-step:last-child::after { display: none; }
+.sd-step-num { width: 52px; height: 52px; border-radius: 50%; background: transparent; border: 1px solid rgba(var(--accent-rgb),0.2); color: var(--accent); display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 1.2rem; margin: 0 auto 16px; }
+.sd-step h4 { font-family: 'Inter', sans-serif; font-weight: 500; margin-bottom: 6px; font-size: 0.9rem; }
+.sd-step p { color: var(--text-secondary); font-size: 0.8rem; }
 
-/* FEATURED SERVICES */
-.featured-section {
-  padding: clamp(7rem, 14vw, 12rem) 0;
-  background: var(--bg-primary);
-  position: relative;
-}
-.featured-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  margin-bottom: clamp(3rem, 6vw, 5rem);
-}
-.featured-header-text { max-width: 600px; }
-.featured-header h2 { margin-top: 0.5rem; }
+.sd-related { padding: clamp(5rem, 10vw, 8rem) 0; background: var(--bg-primary); }
+.sd-related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 2rem; }
+.sd-related-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; text-decoration: none; display: block; transition: border-color 0.4s, transform 0.4s; }
+.sd-related-card:hover { border-color: rgba(var(--accent-rgb),0.15); transform: translateY(-4px); }
+.sd-related-card-img { height: 200px; overflow: hidden; }
+.sd-related-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s var(--ease); }
+.sd-related-card:hover .sd-related-card-img img { transform: scale(1.04); }
+.sd-related-card-body { padding: 24px; }
+.sd-related-card-body h4 { font-family: 'Inter', sans-serif; font-weight: 500; font-size: 0.95rem; }
 
-.service-card {
-  display: block;
-  text-decoration: none;
-  position: relative;
-  border-radius: var(--radius);
-  overflow: hidden;
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  transition: border-color 0.5s var(--ease), box-shadow 0.5s var(--ease), transform 0.5s var(--ease);
-}
-.service-card:hover { border-color: rgba(var(--accent-rgb),0.2); box-shadow: 0 30px 80px rgba(0,0,0,0.6); transform: translateY(-6px); }
-.service-card-img { height: 300px; overflow: hidden; position: relative; }
-.service-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 1s var(--ease); }
-.service-card:hover .service-card-img img { transform: scale(1.06); }
-.service-card-img-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.7) 100%);
-  z-index: 1;
-}
-.service-card-body { padding: 32px; position: relative; }
-.service-card-body h3 {
-  margin-bottom: 8px;
-  color: var(--text-primary);
-  font-size: 1.3rem;
-}
-.service-card-body p { color: var(--text-secondary); font-size: 0.85rem; line-height: 1.7; margin-bottom: 20px; }
-.service-card-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  color: var(--accent);
-  font-size: 0.75rem;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  transition: gap 0.4s var(--ease);
-}
-.service-card:hover .service-card-link { gap: 14px; }
-.service-card-number {
-  position: absolute;
-  top: 28px;
-  right: 28px;
-  font-family: 'Playfair Display', serif;
-  font-size: 3rem;
-  font-weight: 400;
-  color: rgba(255,255,255,0.03);
-  line-height: 1;
-  letter-spacing: -0.04em;
-}
-
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-}
-.services-grid .service-card:first-child { grid-row: span 2; }
-.services-grid .service-card:first-child .service-card-img { height: 100%; min-height: 320px; }
-.services-all { margin-top: 3rem; text-align: center; }
-
-@media(max-width:1024px) {
-  .services-grid { grid-template-columns: 1fr; }
-  .services-grid .service-card:first-child { grid-row: auto; }
-  .services-grid .service-card:first-child .service-card-img { height: 300px; }
-  .featured-header { flex-direction: column; align-items: flex-start; gap: 1.5rem; }
-}
-
-/* ABOUT SECTION */
-.about-section {
-  padding: clamp(7rem, 14vw, 12rem) 0;
-  background: var(--bg-secondary);
-  position: relative;
-  overflow: hidden;
-}
-.about-glow {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(var(--accent-rgb),0.04) 0%, transparent 70%);
-  pointer-events: none;
-}
-.about-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: clamp(4rem, 8vw, 8rem);
-  align-items: center;
-}
-.about-image-col { position: relative; }
-.about-image-main {
-  border-radius: var(--radius);
-  overflow: hidden;
-  box-shadow: 0 40px 100px rgba(0,0,0,0.5);
-}
-.about-image-main img { width: 100%; height: 580px; object-fit: cover; }
-.about-image-accent {
-  position: absolute;
-  bottom: -30px;
-  right: -30px;
-  width: 200px;
-  height: 200px;
-  border-radius: 20px;
-  background: var(--accent);
-  opacity: 0.08;
-  z-index: -1;
-}
-.about-text-col { padding-left: 1rem; }
-.about-text-col h2 { margin-bottom: 2rem; }
-.about-text-col p { color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.9; font-size: 0.95rem; }
-.about-text-col .btn-outline { margin-top: 1rem; }
-
-.about-features {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  margin-top: 2.5rem;
-  margin-bottom: 2rem;
-}
-.about-feature {
-  padding: 20px;
-  border-radius: var(--radius-sm);
-  background: rgba(255,255,255,0.02);
-  border: 1px solid var(--border);
-}
-.about-feature-icon {
-  width: 36px;
-  height: 36px;
-  border-radius: 10px;
-  background: rgba(var(--accent-rgb),0.1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--accent);
-  font-size: 0.9rem;
-  margin-bottom: 12px;
-}
-.about-feature h4 {
-  font-family: 'Inter', sans-serif;
-  font-weight: 500;
-  font-size: 0.85rem;
-  color: var(--text-primary);
-  margin-bottom: 4px;
-}
-.about-feature p { font-size: 0.75rem; color: var(--text-muted); margin: 0; line-height: 1.5; }
-
-@media(max-width:768px) {
-  .about-grid { grid-template-columns: 1fr; }
-  .about-image-main img { height: 400px; }
-  .about-image-accent { display: none; }
-  .about-features { grid-template-columns: 1fr; }
-}
-
-/* GALLERY PREVIEW */
-.gallery-section {
-  padding: clamp(7rem, 14vw, 12rem) 0;
-  background: var(--bg-primary);
-  position: relative;
-}
-.gallery-header { margin-bottom: clamp(3rem, 6vw, 4rem); }
-.gallery-grid-home {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 280px 280px;
-  gap: 12px;
-}
-.gallery-grid-home .gallery-item:nth-child(1) { grid-column: span 2; grid-row: span 2; }
-.gallery-item {
-  position: relative;
-  border-radius: 16px;
-  overflow: hidden;
-  cursor: pointer;
-}
-.gallery-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 1s var(--ease);
-}
-.gallery-item:hover img { transform: scale(1.06); }
-.gallery-item-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.6) 100%);
-  opacity: 0;
-  transition: opacity 0.5s;
-  display: flex;
-  align-items: flex-end;
-  padding: 20px;
-}
-.gallery-item:hover .gallery-item-overlay { opacity: 1; }
-.gallery-item-overlay span {
-  color: rgba(255,255,255,0.9);
-  font-size: 0.75rem;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-@media(max-width:1024px) {
-  .gallery-grid-home { grid-template-columns: 1fr 1fr; grid-template-rows: 300px 300px; }
-  .gallery-grid-home .gallery-item:nth-child(1) { grid-column: span 2; }
-  .gallery-grid-home .gallery-item:nth-child(n+5) { display: none; }
-}
-@media(max-width:768px) {
-  .gallery-grid-home { grid-template-columns: 1fr; grid-template-rows: repeat(3, 280px); }
-  .gallery-grid-home .gallery-item:nth-child(1) { grid-column: auto; grid-row: auto; }
-  .gallery-grid-home .gallery-item:nth-child(n+4) { display: none; }
-}
-
-/* TESTIMONIAL */
-.testimonial-section {
-  padding: clamp(8rem, 16vw, 14rem) 0;
-  background: var(--bg-secondary);
-  position: relative;
-  overflow: hidden;
-}
-.testimonial-bg-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(10rem, 20vw, 25rem);
-  font-weight: 400;
-  color: rgba(255,255,255,0.015);
-  white-space: nowrap;
-  pointer-events: none;
-  letter-spacing: -0.05em;
-}
-.testimonial-content {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  max-width: 750px;
-  margin: 0 auto;
-}
-.testimonial-stars { color: var(--accent); font-size: 0.9rem; letter-spacing: 6px; margin-bottom: 2.5rem; }
-.testimonial-text {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(1.4rem, 3vw, 2.2rem);
-  font-weight: 400;
-  font-style: italic;
-  line-height: 1.5;
-  color: var(--text-primary);
-  margin-bottom: 2.5rem;
-  letter-spacing: -0.02em;
-}
-.testimonial-meta { font-size: 0.8rem; color: var(--text-muted); letter-spacing: 0.1em; text-transform: uppercase; }
-
-/* CTA SECTION */
-.cta-section {
-  position: relative;
-  padding: clamp(6rem, 12vw, 10rem) 0;
-  background: var(--bg-primary);
-  overflow: hidden;
-  text-align: center;
-}
-.cta-border-box {
-  position: relative;
-  padding: clamp(4rem, 8vw, 7rem) clamp(2rem, 6vw, 5rem);
-  border: 1px solid rgba(var(--accent-rgb), 0.15);
-  border-radius: var(--radius);
-  overflow: hidden;
-}
-.cta-border-box::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse at center, rgba(var(--accent-rgb),0.06) 0%, transparent 70%);
-}
+.cta-section { position: relative; padding: clamp(6rem, 12vw, 10rem) 0; background: var(--bg-primary); overflow: hidden; text-align: center; }
+.cta-border-box { position: relative; padding: clamp(4rem, 8vw, 7rem) clamp(2rem, 6vw, 5rem); border: 1px solid rgba(var(--accent-rgb), 0.15); border-radius: var(--radius); overflow: hidden; }
+.cta-border-box::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(var(--accent-rgb),0.06) 0%, transparent 70%); }
 .cta-border-box h2 { position: relative; z-index: 1; margin-bottom: 1rem; }
-.cta-border-box p { position: relative; z-index: 1; color: var(--text-secondary); margin-bottom: 2.5rem; font-size: 1rem; max-width: 500px; margin-left: auto; margin-right: auto; }
+.cta-border-box p { position: relative; z-index: 1; color: var(--text-secondary); margin-bottom: 2rem; font-size: 1rem; }
 .cta-border-box .btn-primary { position: relative; z-index: 1; }
 
-/* TEAM MINI on homepage */
-.team-strip {
-  padding: clamp(5rem, 10vw, 8rem) 0;
-  background: var(--bg-primary);
-}
-.team-strip-inner {
-  display: flex;
-  gap: 40px;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-.team-strip-member {
-  text-align: center;
-}
-.team-strip-img {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  overflow: hidden;
-  margin: 0 auto 12px;
-  border: 2px solid rgba(255,255,255,0.06);
-  transition: border-color 0.4s;
-}
-.team-strip-member:hover .team-strip-img { border-color: rgba(var(--accent-rgb),0.3); }
-.team-strip-img img { width: 100%; height: 100%; object-fit: cover; }
-.team-strip-name {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.8rem;
-  font-weight: 500;
-  color: var(--text-primary);
-  margin-bottom: 2px;
-}
-.team-strip-role {
-  font-size: 0.7rem;
-  color: var(--text-muted);
+@media(max-width:768px) {
+  .sd-main { grid-template-columns: 1fr; }
+  .sd-sidebar { position: static; }
+  .sd-steps { grid-template-columns: 1fr 1fr; }
+  .sd-step::after { display: none; }
+  .sd-related-grid { grid-template-columns: 1fr; }
 }
 </style>
 </head>
@@ -1082,223 +650,132 @@ img { max-width: 100%; height: auto; display: block; }
 <div class="cursor-ring"></div>
 <nav class="nav" id="mainNav">
   <div class="nav-inner">
-    <a href="index.html" class="nav-brand"><img src="https://infax.org/coiffeur-marianne-gratl/wp-content/uploads/sites/155/2022/01/logo.png" alt="Coiffeur Marianne Gratl | Expert Coloriste | Intercoiffure | Haroldstr. 32 | 40213 Düsseldorf | City | Zentrum | Coloration – Farbe | Blond | Haarverlängerung | Friseur | Stylisten | Kö | Königsallee | Starfriseur – Promis | Kerastase | l´oreal – Loreal Paris | Wella | paul mitchel | greath lenghts | Blondspezialisten | Carlstadt | Karlstadt | Maria Clara Figueiredo | Balayage | Strähnen | Männer | Herren" class="nav-logo"></a>
+    <a href="../index.html" class="nav-brand"><img src="https://infax.org/coiffeur-marianne-gratl/wp-content/uploads/sites/155/2022/01/logo.png" alt="Coiffeur Marianne Gratl | Expert Coloriste | Intercoiffure | Haroldstr. 32 | 40213 Düsseldorf | City | Zentrum | Coloration – Farbe | Blond | Haarverlängerung | Friseur | Stylisten | Kö | Königsallee | Starfriseur – Promis | Kerastase | l´oreal – Loreal Paris | Wella | paul mitchel | greath lenghts | Blondspezialisten | Carlstadt | Karlstadt | Maria Clara Figueiredo | Balayage | Strähnen | Männer | Herren" class="nav-logo"></a>
     <button class="menu-toggle" aria-label="Menü">
       <span></span><span></span><span></span>
     </button>
     <ul class="nav-links">
-      <li><a href="index.html" class="active">Startseite</a></li>
-      <li><a href="leistungen.html">Leistungen</a></li>
-      <li><a href="ueber-uns.html">Über uns</a></li>
-      <li><a href="galerie.html">Galerie</a></li>
-      <li><a href="kontakt.html">Kontakt</a></li>
-      <li><a href="kontakt.html" class="nav-cta">Termin buchen</a></li>
+      <li><a href="../index.html">Startseite</a></li>
+      <li><a href="../leistungen.html" class="active">Leistungen</a></li>
+      <li><a href="../ueber-uns.html">Über uns</a></li>
+      <li><a href="../galerie.html">Galerie</a></li>
+      <li><a href="../kontakt.html">Kontakt</a></li>
+      <li><a href="../kontakt.html" class="nav-cta">Termin buchen</a></li>
     </ul>
   </div>
 </nav>
 <div class="mobile-overlay"></div>
 
-<section class="hero">
-  <div class="hero-bg-image" style="background-image:url('https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=1920&amp;q=80&amp;fit=crop')"></div>
-  <div class="hero-gradient-left"></div>
-  <div class="hero-gradient-bottom"></div>
-  <div class="hero-decoration" data-parallax="-0.03"></div>
-  <div class="container hero-inner">
-    <div class="hero-content">
-      <div class="hero-eyebrow">Coiffeur Marianne Gratl · Düsseldorf</div>
-      <h1 class="hero-title"><span class="word">Wir</span> <span class="word">freuen</span> <span class="word">uns</span> <span class="word">darauf</span> <span class="word">Sie</span> <span class="word">zu</span> <span class="word">begeistern!</span></h1>
-      <p class="hero-subtitle">Eine schöne Haarfarbe, Strähnen, Balayage oder Highlights mit einen perfekten Haarschnitt ist die Grundlage für einen guten Look für die modebewusste Frau von Heute. Wir freuen uns auf Ihren Besuch. G</p>
-      <div class="hero-ctas">
-        <a href="kontakt.html" class="btn-primary"><span>Termin vereinbaren</span> <span class="btn-arrow">→</span></a>
-        <a href="leistungen.html" class="btn-ghost">Leistungen entdecken</a>
+<section class="sd-hero">
+  <div class="sd-hero-bg" style="background-image:url('https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1920&amp;q=80&amp;fit=crop')"></div>
+  <div class="sd-hero-overlay"></div>
+  <div class="container">
+    <p class="section-label rv" style="color:var(--accent)">Leistungen</p>
+    <h1 class="rv rv-d1">Balayage</h1>
+    
+  </div>
+</section>
+
+<section class="sd-content">
+  <div class="container">
+    <div class="sd-main">
+      <div class="sd-text rv">
+        <p>Natürlich fließende Farbverläufe für einen sonnengeküssten Look. Unsere Spezialität.</p>
+        <p>Wir bieten Ihnen erstklassigen Service mit Fokus auf Qualität und Kundenzufriedenheit. Unser erfahrenes Team steht Ihnen zur Seite.</p>
+        <p>Vertrauen Sie auf unsere Expertise und lassen Sie sich von unserem professionellen Ansatz überzeugen.</p>
       </div>
-      <div class="hero-stats">
-        <div class="hero-stat">
-          <div class="hero-stat-number" data-count="4.9" data-suffix="">4.9</div>
-          <div class="hero-stat-label">Google Bewertung</div>
-        </div>
-        <div class="hero-stat">
-          <div class="hero-stat-number" data-count="151" data-suffix="+">0+</div>
-          <div class="hero-stat-label">Zufriedene Kunden</div>
-        </div>
-        <div class="hero-stat">
-          <div class="hero-stat-number" data-count="10" data-suffix="+">0+</div>
-          <div class="hero-stat-label">Jahre Erfahrung</div>
+      <div class="sd-sidebar rv rv-d2">
+        <div class="sd-sidebar-card">
+          
+          <h4>Jetzt anfragen</h4>
+          <p style="color:var(--text-secondary);font-size:0.8rem;margin-bottom:20px">Kontaktieren Sie uns für eine unverbindliche Beratung.</p>
+          <a href="../kontakt.html" class="btn-primary" style="width:100%;justify-content:center"><span>Termin vereinbaren</span></a>
+          <p style="text-align:center;margin-top:16px;font-size:0.8rem;color:var(--text-muted)">oder: <strong style="color:var(--text-primary)">(+49) 0211 - 38 38 03</strong></p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<div class="hero-marquee">
-  <div class="marquee">
-    <div class="marquee-track">
-      <div class="marquee-item"><span class="marquee-dot"></span>Coiffeur Marianne Gratl</div><div class="marquee-item"><span class="marquee-dot"></span>Düsseldorf</div><div class="marquee-item"><span class="marquee-dot"></span>Seit Jahren Ihr Partner</div><div class="marquee-item"><span class="marquee-dot"></span>Termin vereinbaren</div><div class="marquee-item"><span class="marquee-dot"></span>Coiffeur Marianne Gratl</div><div class="marquee-item"><span class="marquee-dot"></span>Düsseldorf</div><div class="marquee-item"><span class="marquee-dot"></span>Seit Jahren Ihr Partner</div><div class="marquee-item"><span class="marquee-dot"></span>Termin vereinbaren</div><div class="marquee-item"><span class="marquee-dot"></span>Coiffeur Marianne Gratl</div><div class="marquee-item"><span class="marquee-dot"></span>Düsseldorf</div><div class="marquee-item"><span class="marquee-dot"></span>Seit Jahren Ihr Partner</div><div class="marquee-item"><span class="marquee-dot"></span>Termin vereinbaren</div>
-    </div>
-  </div>
-</div>
-
 <div class="line-reveal"></div>
 
-<section class="featured-section">
+<section style="padding:clamp(5rem,10vw,8rem) 0;background:var(--bg-primary)">
   <div class="container">
-    <div class="featured-header">
-      <div class="featured-header-text">
-        <p class="section-label rv">Was wir bieten</p>
-        <h2 class="rv rv-d1">Unsere Leistungen</h2>
+    <p class="section-label rv">Ihre Vorteile</p>
+    <h2 class="rv rv-d1">Warum Balayage?</h2>
+    <div class="sd-benefits">
+      <div class="sd-benefit rv rv-d1">
+        <div class="sd-benefit-icon">✓</div>
+        <h4>Höchste Qualität</h4>
+        <p>Premium-Materialien und bewährte Methoden.</p>
       </div>
-      <a href="leistungen.html" class="btn-outline rv rv-d2">Alle ansehen <span>→</span></a>
-    </div>
-    <div class="services-grid">
-      <a href="leistungen/damen-haarschnitt.html" class="service-card tilt-card rv rv-d1">
-        <div class="service-card-img">
-          <img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=1920&amp;q=80&amp;fit=crop" alt="Damen Haarschnitt" loading="lazy">
-          <div class="service-card-img-overlay"></div>
-        </div>
-        <div class="service-card-body">
-          <span class="service-card-number">01</span>
-          <h3>Damen Haarschnitt</h3>
-          <p>Ob klassisch oder trendig — wir kreieren den perfekten Schnitt, abgestimmt auf Ihre Gesich...</p>
-          <span class="service-card-link">Mehr erfahren →</span>
-        </div>
-      </a>
-      <a href="leistungen/herren-haarschnitt.html" class="service-card tilt-card rv rv-d2">
-        <div class="service-card-img">
-          <img src="https://images.unsplash.com/photo-1622288432450-277d0fef5ed6?w=1920&amp;q=80&amp;fit=crop" alt="Herren Haarschnitt" loading="lazy">
-          <div class="service-card-img-overlay"></div>
-        </div>
-        <div class="service-card-body">
-          <span class="service-card-number">02</span>
-          <h3>Herren Haarschnitt</h3>
-          <p>Präzise Schnitte für den modernen Mann. Vom Business-Look bis zum lässigen Style.</p>
-          <span class="service-card-link">Mehr erfahren →</span>
-        </div>
-      </a>
-      <a href="leistungen/coloration-straehnen.html" class="service-card tilt-card rv rv-d3">
-        <div class="service-card-img">
-          <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=1920&amp;q=80&amp;fit=crop" alt="Coloration &amp; Strähnen" loading="lazy">
-          <div class="service-card-img-overlay"></div>
-        </div>
-        <div class="service-card-body">
-          <span class="service-card-number">03</span>
-          <h3>Coloration &amp; Strähnen</h3>
-          <p>Brillante Farbergebnisse mit hochwertigen Produkten. Balayage, Highlights oder komplette C...</p>
-          <span class="service-card-link">Mehr erfahren →</span>
-        </div>
-      </a>
-      <a href="leistungen/balayage.html" class="service-card tilt-card rv rv-d1">
-        <div class="service-card-img">
-          <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1920&amp;q=80&amp;fit=crop" alt="Balayage" loading="lazy">
-          <div class="service-card-img-overlay"></div>
-        </div>
-        <div class="service-card-body">
-          <span class="service-card-number">04</span>
-          <h3>Balayage</h3>
-          <p>Natürlich fließende Farbverläufe für einen sonnengeküssten Look. Unsere Spezialität.</p>
-          <span class="service-card-link">Mehr erfahren →</span>
-        </div>
-      </a>
-      <a href="leistungen/styling-beratung.html" class="service-card tilt-card rv rv-d2">
-        <div class="service-card-img">
-          <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=1920&amp;q=80&amp;fit=crop" alt="Styling &amp; Beratung" loading="lazy">
-          <div class="service-card-img-overlay"></div>
-        </div>
-        <div class="service-card-body">
-          <span class="service-card-number">05</span>
-          <h3>Styling &amp; Beratung</h3>
-          <p>Individuelle Typberatung und professionelles Styling für jeden Anlass.</p>
-          <span class="service-card-link">Mehr erfahren →</span>
-        </div>
-      </a>
+      <div class="sd-benefit rv rv-d2">
+        <div class="sd-benefit-icon">⦿</div>
+        <h4>Individuell</h4>
+        <p>Auf Ihre Bedürfnisse zugeschnitten.</p>
+      </div>
+      <div class="sd-benefit rv rv-d3">
+        <div class="sd-benefit-icon">★</div>
+        <h4>Erfahrenes Team</h4>
+        <p>Langjährige Expertise.</p>
+      </div>
+      <div class="sd-benefit rv rv-d4">
+        <div class="sd-benefit-icon">♡</div>
+        <h4>Kundenorientiert</h4>
+        <p>Ihre Zufriedenheit steht im Fokus.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<div class="line-reveal"></div>
-
-<section class="about-section">
-  <div class="about-glow"></div>
+<section class="sd-process">
   <div class="container">
-    <div class="about-grid">
-      <div class="about-image-col rv">
-        <div class="about-image-main img-scale">
-          <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?w=1920&amp;q=80&amp;fit=crop" alt="Über Coiffeur Marianne Gratl" loading="lazy">
-        </div>
-        <div class="about-image-accent"></div>
+    <p class="section-label rv">So funktioniert’s</p>
+    <h2 class="rv rv-d1">Unser Ablauf</h2>
+    <div class="sd-steps">
+      <div class="sd-step rv rv-d1">
+        <div class="sd-step-num">1</div>
+        <h4>Beratung</h4>
+        <p>Wir besprechen Ihre Wünsche.</p>
       </div>
-      <div class="about-text-col">
-        <p class="section-label rv">Über uns</p>
-        <h2 class="rv rv-d1">Lernen Sie<br>uns kennen</h2>
-        <p class="rv rv-d2">Eine schöne Haarfarbe, Strähnen, Balayage oder Highlights mit einen perfekten Haarschnitt ist die Grundlage für einen guten Look für die modebewusste Frau von Heute. Wir freuen uns auf Ihren Besuch. Genießen Sie Ihren Beauty Tag bei uns im Salon und lassen Sie sich verwöhnen.</p>
-        <div class="about-features rv rv-d3">
-          <div class="about-feature">
-            <div class="about-feature-icon">✓</div>
-            <h4>Fachkompetenz</h4>
-            <p>Zertifizierte Experten</p>
-          </div>
-          <div class="about-feature">
-            <div class="about-feature-icon">★</div>
-            <h4>Qualität</h4>
-            <p>Premium Standards</p>
-          </div>
-          <div class="about-feature">
-            <div class="about-feature-icon">♡</div>
-            <h4>Individualität</h4>
-            <p>Maßgeschneiderte Lösungen</p>
-          </div>
-          <div class="about-feature">
-            <div class="about-feature-icon">⦿</div>
-            <h4>Transparenz</h4>
-            <p>Faire Preise & Beratung</p>
-          </div>
-        </div>
-        <a href="ueber-uns.html" class="btn-outline rv rv-d4">Mehr erfahren <span>→</span></a>
+      <div class="sd-step rv rv-d2">
+        <div class="sd-step-num">2</div>
+        <h4>Konzept</h4>
+        <p>Individuelles Konzept für Sie.</p>
+      </div>
+      <div class="sd-step rv rv-d3">
+        <div class="sd-step-num">3</div>
+        <h4>Umsetzung</h4>
+        <p>Professionelle Durchführung.</p>
+      </div>
+      <div class="sd-step rv rv-d4">
+        <div class="sd-step-num">4</div>
+        <h4>Nachsorge</h4>
+        <p>Auch danach für Sie da.</p>
       </div>
     </div>
   </div>
 </section>
 
 
-
 <div class="line-reveal"></div>
-
-<section class="gallery-section">
+<section class="sd-related">
   <div class="container">
-    <div class="gallery-header">
-      <div class="featured-header">
-        <div class="featured-header-text">
-          <p class="section-label rv">Einblicke</p>
-          <h2 class="rv rv-d1">Galerie</h2>
-        </div>
-        <a href="galerie.html" class="btn-outline rv rv-d2">Alle Bilder <span>→</span></a>
-      </div>
-    </div>
-    <div class="gallery-grid-home">
-      <a href="galerie.html" class="gallery-item rv rv-d1">
-        <img src="https://images.unsplash.com/photo-1560750588-73207b1ef5b8?w=1920&amp;q=80&amp;fit=crop" alt="Galerie 1" loading="lazy">
-        <div class="gallery-item-overlay"><span>Ansehen →</span></div>
+    <p class="section-label rv">Weitere Leistungen</p>
+    <h2 class="rv rv-d1">Das könnte Sie auch interessieren</h2>
+    <div class="sd-related-grid">
+      <a href="damen-haarschnitt.html" class="sd-related-card rv rv-d1">
+        <div class="sd-related-card-img"><img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=1920&amp;q=80&amp;fit=crop" alt="Damen Haarschnitt" loading="lazy"></div>
+        <div class="sd-related-card-body"><h4>Damen Haarschnitt</h4></div>
       </a>
-      <a href="galerie.html" class="gallery-item rv rv-d2">
-        <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=1920&amp;q=80&amp;fit=crop" alt="Galerie 2" loading="lazy">
-        <div class="gallery-item-overlay"><span>Ansehen →</span></div>
+      <a href="herren-haarschnitt.html" class="sd-related-card rv rv-d2">
+        <div class="sd-related-card-img"><img src="https://images.unsplash.com/photo-1622288432450-277d0fef5ed6?w=1920&amp;q=80&amp;fit=crop" alt="Herren Haarschnitt" loading="lazy"></div>
+        <div class="sd-related-card-body"><h4>Herren Haarschnitt</h4></div>
       </a>
-      <a href="galerie.html" class="gallery-item rv rv-d3">
-        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1920&amp;q=80&amp;fit=crop" alt="Galerie 3" loading="lazy">
-        <div class="gallery-item-overlay"><span>Ansehen →</span></div>
+      <a href="coloration-straehnen.html" class="sd-related-card rv rv-d3">
+        <div class="sd-related-card-img"><img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=1920&amp;q=80&amp;fit=crop" alt="Coloration &amp; Strähnen" loading="lazy"></div>
+        <div class="sd-related-card-body"><h4>Coloration &amp; Strähnen</h4></div>
       </a>
-    </div>
-  </div>
-</section>
-
-<div class="line-reveal"></div>
-
-<section class="testimonial-section">
-  <div class="testimonial-bg-text">Coiffeur Marianne Gratl</div>
-  <div class="container">
-    <div class="testimonial-content rv">
-      <div class="testimonial-stars">★★★★★</div>
-      <p class="testimonial-text">„Ein absolut erstklassiges Erlebnis. Professionell, aufmerksam und mit Liebe zum Detail. Ich komme immer wieder gerne zurück.“</p>
-      <p class="testimonial-meta">4.9 von 5 &mdash; Basierend auf 151 Bewertungen</p>
     </div>
   </div>
 </section>
@@ -1306,9 +783,9 @@ img { max-width: 100%; height: auto; display: block; }
 <section class="cta-section">
   <div class="container">
     <div class="cta-border-box rv">
-      <h2>Bereit loszulegen?</h2>
-      <p>Vereinbaren Sie jetzt Ihren persönlichen Termin.</p>
-      <a href="kontakt.html" class="btn-primary"><span>Jetzt Termin buchen</span> <span class="btn-arrow">→</span></a>
+      <h2>Jetzt Termin vereinbaren</h2>
+      <p>Wir freuen uns auf Ihre Anfrage.</p>
+      <a href="../kontakt.html" class="btn-primary"><span>Kontakt aufnehmen</span> <span class="btn-arrow">→</span></a>
     </div>
   </div>
 </section>
@@ -1329,11 +806,11 @@ img { max-width: 100%; height: auto; display: block; }
     <div>
       <h4>Navigation</h4>
       <ul class="footer-links">
-        <li><a href="index.html">Startseite</a></li>
-        <li><a href="leistungen.html">Leistungen</a></li>
-        <li><a href="ueber-uns.html">Über uns</a></li>
-        <li><a href="galerie.html">Galerie</a></li>
-        <li><a href="kontakt.html">Kontakt</a></li>
+        <li><a href="../index.html">Startseite</a></li>
+        <li><a href="../leistungen.html">Leistungen</a></li>
+        <li><a href="../ueber-uns.html">Über uns</a></li>
+        <li><a href="../galerie.html">Galerie</a></li>
+        <li><a href="../kontakt.html">Kontakt</a></li>
       </ul>
     </div>
     <div>
@@ -1346,9 +823,9 @@ img { max-width: 100%; height: auto; display: block; }
     <div>
       <h4>Rechtliches</h4>
       <ul class="footer-links">
-        <li><a href="impressum.html">Impressum</a></li>
-        <li><a href="datenschutz.html">Datenschutz</a></li>
-        <li><a href="agb.html">AGB</a></li>
+        <li><a href="../impressum.html">Impressum</a></li>
+        <li><a href="../datenschutz.html">Datenschutz</a></li>
+        <li><a href="../agb.html">AGB</a></li>
       </ul>
     </div>
   </div>
@@ -1507,19 +984,6 @@ document.addEventListener('DOMContentLoaded', function() {
     card.addEventListener('mouseenter', function() { card.style.transition = 'transform 0.1s'; });
   });
 });
-
-// Hero image slow zoom
-(function() {
-  var bg = document.querySelector('.hero-bg-image');
-  if (bg) setTimeout(function() { bg.classList.add('loaded'); }, 100);
-
-  // Parallax on hero bg
-  window.addEventListener('scroll', function() {
-    if (bg && window.scrollY < window.innerHeight * 1.5) {
-      bg.style.transform = 'scale(' + (1.1 - window.scrollY * 0.0001) + ') translateY(' + (window.scrollY * 0.15) + 'px)';
-    }
-  });
-})();
 </script>
 </body>
 </html>
